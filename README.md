@@ -8,6 +8,7 @@
 - You must have to select a custom phh gsi with Android Version > 12.
 - Scroll down for "how to build it on your pc instead of workflow", because the file might be higher than 2GB
 - Get stock ROM files for build here (latest rn): https://github.com/w111user/fun/releases/tag/0.0
+- Get OrangeFox Recovery here (latest rn): https://github.com/w111user/Custom-Rom-Builder-For-Samsung-Galaxy-A03/releases/tag/25416318072
 
 
 # How to Use this
@@ -45,7 +46,7 @@ like this LineageOS-20.1-a035fxxnn-arm64-gapps.7z
 - [Phhusson](https://github.com/phhusson)
 - [bruh™](https://github.com/Exynos-nibba)
 - [gauravv.x1](https://github.com/gauravv-x1)
-Notes:
+### Notes:
 - Based on latest ROM for Samsung Galaxy A035F, the ROM that you build might higher than 2GB, try to clone this repo to your PC and build it yourself :)
 ## Build directly on PC (Linux/WSL2)
 
