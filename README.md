@@ -6,6 +6,7 @@
 - Extract that 7z file you'll get your super.tar with custom gsi.
 - Then Flash that super.tar using ODIN in AP Section.
 - You must have to select a custom phh gsi with Android Version > 12.
+- Scroll down for "how to build it on your pc instead of workflow", because the file might be higher than 2GB
 
 
 # How to Use this
@@ -43,3 +44,64 @@ like this LineageOS-20.1-a035fxxnn-arm64-gapps.7z
 - [Phhusson](https://github.com/phhusson)
 - [bruh™](https://github.com/Exynos-nibba)
 - [gauravv.x1](https://github.com/gauravv-x1)
+Notes:
+- Based on latest ROM for Samsung Galaxy A035F, the ROM that you build might higher than 2GB, try to clone this repo to your PC and build it yourself :)
+## Build directly on PC (Linux/WSL2)
+
+> ⚠️ Recommended when ROM file exceeds 2GB
+
+### Requirements
+- Ubuntu/Debian or WSL2 on Windows
+- At least 20GB free storage
+- 4GB+ RAM
+
+### Step 1: Install dependencies
+```bash
+sudo apt update
+sudo apt install -y zip xz-utils unzip p7zip-full wget git
+```
+
+### Step 2: Clone tools
+```bash
+git clone https://github.com/w111user/Custom-Rom-Builder-For-Samsung-Galaxy-A03.git lpbinary
+cd lpbinary && bash install.sh && cd binary
+```
+
+### Step 3: Download GSI (.xz)
+```bash
+wget <your_gsi_link.img.xz>
+mkdir sys && mv *.xz sys && cd sys
+unxz *.xz
+mv *.img ../system.img && cd ..
+```
+
+### Step 4: Download vendor files
+> Extract vendor.img, product.img, system_ext.img from your firmware's AP file using 7-Zip (inside super.img)
+```bash
+wget <your_vendor.img_link>
+wget <your_product.img_link>
+wget <your_system_ext.img_link>
+```
+
+### Step 5: Pack super.img
+```bash
+./lpmake --metadata-size 65536 --super-name super --metadata-slots 2 \
+--device super:6763315200 --group main:6761218048 \
+--partition system:readonly:$(ls -nl system.img | awk '{print $5}'):main --image system=system.img \
+--partition vendor:readonly:$(ls -nl vendor.img | awk '{print $5}'):main --image vendor=vendor.img \
+--partition product:readonly:$(ls -nl product.img | awk '{print $5}'):main --image product=product.img \
+--partition system_ext:readonly:$(ls -nl system_ext.img | awk '{print $5}'):main --image system_ext=system_ext.img \
+--sparse --output super.img
+```
+
+### Step 6: Create flashable file
+```bash
+tar -cvf super.tar super.img
+7z a <rom_name>.7z super.tar
+```
+
+### Step 7: Flash via ODIN
+- Extract `.7z` → get `super.tar`
+- Open ODIN → **AP** tab → select `super.tar`
+- Uncheck **Auto Reboot** → **Start**
+- After PASS → boot Recovery → Factory Reset → Reboot
