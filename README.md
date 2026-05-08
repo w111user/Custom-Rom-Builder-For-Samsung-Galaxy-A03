@@ -63,7 +63,7 @@ sudo apt install -y zip xz-utils unzip p7zip-full wget git
 
 ### Step 2: Clone tools
 ```bash
-git clone https://github.com/w111user/Custom-Rom-Builder-For-Samsung-Galaxy-A03.git lpbinary
+git clone https://github.com/Exynos-nigg/lpunpack-lpmake-mirror.git lpbinary
 cd lpbinary && bash install.sh && cd binary
 ```
 
@@ -105,3 +105,4 @@ tar -cvf super.tar super.img
 - Open ODIN → **AP** tab → select `super.tar`
 - Uncheck **Auto Reboot** → **Start**
 - After PASS → boot Recovery → Factory Reset → Reboot
+### Enjoy the results!
