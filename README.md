@@ -47,7 +47,7 @@ like this LineageOS-20.1-a035fxxnn-arm64-gapps.7z
 - [bruh™](https://github.com/Exynos-nibba)
 - [gauravv.x1](https://github.com/gauravv-x1)
 ### Notes:
-- Based on latest ROM for Samsung Galaxy A035F, the ROM that you build might higher than 2GB, try to clone this repo to your PC and build it yourself :)
+- Based on latest ROM for Samsung Galaxy A035F, the ROM that you build might higher than 2GB, try to clone da repo to your PC and build it yourself :)
 ## Build directly on PC (Linux/WSL2)
 
 > ⚠️ Recommended when ROM file exceeds 2GB
