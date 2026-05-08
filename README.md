@@ -7,6 +7,7 @@
 - Then Flash that super.tar using ODIN in AP Section.
 - You must have to select a custom phh gsi with Android Version > 12.
 - Scroll down for "how to build it on your pc instead of workflow", because the file might be higher than 2GB
+- Get stock ROM files for build here (latest rn): https://github.com/w111user/fun/releases/tag/0.0
 
 
 # How to Use this
