@@ -9,6 +9,7 @@
 - Scroll down for "how to build it on your pc instead of workflow", because GitHub Actions artifacts/releases may exceed 2GB
 - Get stock ROM files for build here (latest rn): https://github.com/w111user/fun/releases/tag/0.0
 - Get OrangeFox Recovery here (latest rn): https://github.com/w111user/Custom-Rom-Builder-For-Samsung-Galaxy-A03/releases/tag/25416318072
+- Modded stock recovery (with ADB, etc...): https://github.com/w111user/SM-A035F-StockRecoveryPlus/releases/tag/v1.0.0
 - Android 14 GSIs are recommended
 - Vendor must match current firmware binary
 
